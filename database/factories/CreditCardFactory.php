@@ -23,7 +23,6 @@ class CreditCardFactory extends Factory
             'security_code' => Crypt::encryptString($this->faker->randomNumber(3)),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-
             'user_id' => User::factory(),
         ];
     }

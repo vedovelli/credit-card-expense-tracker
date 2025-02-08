@@ -1,9 +1,10 @@
+import { Link, usePage } from '@inertiajs/react';
+import { PropsWithChildren, ReactNode, useState } from 'react';
+
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Link, usePage } from '@inertiajs/react';
-import { PropsWithChildren, ReactNode, useState } from 'react';
 
 export default function Authenticated({
     header,
@@ -32,6 +33,14 @@ export default function Authenticated({
                                     active={route().current('dashboard')}
                                 >
                                     Dashboard
+                                </NavLink>
+                                <NavLink
+                                    href={route('credit-card.index')}
+                                    active={route().current(
+                                        'credit-card.index',
+                                    )}
+                                >
+                                    Credit Cards
                                 </NavLink>
                             </div>
                         </div>

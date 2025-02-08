@@ -22,11 +22,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'fabio@vedovelli.com.br',
         ]);
 
-        CreditCard::factory(5)->create([
+        CreditCard::factory(33)->create([
             'user_id' => $user->id,
         ]);
-
-        User::factory(50)->create();
-
     }
 }

@@ -14,8 +14,14 @@ export default function Dashboard() {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">Bem vindo!</div>
+                    <div className="overflow-hidden bg-white p-12 shadow-sm sm:rounded-lg">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Expedita, ullam. Nam id obcaecati impedit non
+                            blanditiis fugit perspiciatis sunt quibusdam, ipsam
+                            aliquid modi ipsa, dignissimos neque quasi commodi
+                            architecto nostrum.
+                        </p>
                     </div>
                 </div>
             </div>
