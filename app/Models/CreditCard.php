@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\CreditCardNumberCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,7 +21,9 @@ class CreditCard extends Model
         'security_code',
     ];
 
-    protected $hidden = ['security_code'];
+    protected $hidden = ['security_code', 'updated_at', 'deleted_at'];
+
+    protected $with = ['user:id,name'];
 
     public function user(): BelongsTo
     {
@@ -30,8 +33,10 @@ class CreditCard extends Model
     protected function casts(): array
     {
         return [
-            'valid_to' => 'datetime',
-            'valid_from' => 'datetime',
+            'valid_to' => 'datetime:m/Y',
+            'valid_from' => 'datetime:m/Y',
+            'created_at' => 'datetime:d/m/Y',
+            'number' => CreditCardNumberCast::class,
         ];
     }
 }
